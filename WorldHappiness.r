@@ -97,7 +97,14 @@ library(magrittr)
 library(dplyr)
 ?dplyr::filter()
 ?dplyr::arrange()
-top_20 <-  
+
+HappinessRank_top20 <- filter(Happiness_Rank, Happiness_Rank$`Happiness Rank 2015` <= 20)
+
+HappinessRank_top20 <- dplyr::arrange(HappinessRank_top20, desc(HappinessRank_top20$`Happiness Rank 2015`))
+
+HappinessRank_top20
+
+
 
 # Using size for a discrete variable is not advised. 
 # 
