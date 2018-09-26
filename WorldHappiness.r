@@ -104,7 +104,44 @@ HappinessRank_top20 <- dplyr::arrange(HappinessRank_top20, desc(HappinessRank_to
 
 HappinessRank_top20
 
+class(HappinessRank_top20)
 
+library(ggplot2)
+
+?geom_bar()
+
+Ranking2015 <- ggplot(HappinessRank_top20, 
+                aes(x=factor(Country, 
+                  levels = Country), 
+                  y=HappinessRank_top20$Happiness.Rank.2015)) +
+                  geom_bar(stat = 'identity', width = 0.5, 
+                  fill = "blue")
+Ranking2015
+
+Ranking2016 <- ggplot(HappinessRank_top20, 
+              aes(x=factor(Country, 
+                levels = Country), 
+              y=HappinessRank_top20$Happiness.Rank.2016)) +
+              geom_bar(stat = 'identity', width = 0.5, 
+              fill = "red")
+
+Ranking2016
+
+Ranking2017 <- ggplot(HappinessRank_top20, 
+                aes(x=factor(Country, 
+                levels = Country), 
+                y=HappinessRank_top20$Happiness.Rank.2017)) +
+                geom_bar(stat = 'identity', width = 0.5, 
+                fill = "orange")
+
+Ranking2017
+
+library(gridExtra)
+
+library(grid)
+
+grid.arrange(Ranking2015, Ranking2016, Ranking2017, 
+             nrow = 3)
 
 # Using size for a discrete variable is not advised. 
 # 
