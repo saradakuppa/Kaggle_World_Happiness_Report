@@ -115,7 +115,9 @@ Ranking2015 <- ggplot(HappinessRank_top20,
                   levels = Country), 
                   y=HappinessRank_top20$Happiness.Rank.2015)) +
                   geom_bar(stat = 'identity', width = 0.5, 
-                  fill = "blue")
+                  fill = "blue") + 
+                  theme(axis.text.x = element_text(angle=90, vjust=0.9))+
+                  labs(title="Top20 Happiest Countries-2015",x="Country",y="Rank")
 Ranking2015
 
 Ranking2016 <- ggplot(HappinessRank_top20, 
@@ -123,7 +125,9 @@ Ranking2016 <- ggplot(HappinessRank_top20,
                 levels = Country), 
               y=HappinessRank_top20$Happiness.Rank.2016)) +
               geom_bar(stat = 'identity', width = 0.5, 
-              fill = "red")
+              fill = "red") +
+              theme(axis.text.x = element_text(angle=90, vjust=0.9))+
+              labs(title="Top20 Happiest Countries-2016",x="Country",y="Rank")
 
 Ranking2016
 
@@ -132,13 +136,17 @@ Ranking2017 <- ggplot(HappinessRank_top20,
                 levels = Country), 
                 y=HappinessRank_top20$Happiness.Rank.2017)) +
                 geom_bar(stat = 'identity', width = 0.5, 
-                fill = "orange")
+                fill = "orange") + 
+                theme(axis.text.x = element_text(angle=90, vjust=0.9))+
+                labs(title="Top20 Happiest Countries-2017",x="Country",y="Rank")
 
 Ranking2017
 
 library(gridExtra)
 
 library(grid)
+
+?grid.arrange()
 
 grid.arrange(Ranking2015, Ranking2016, Ranking2017, 
              nrow = 3)
