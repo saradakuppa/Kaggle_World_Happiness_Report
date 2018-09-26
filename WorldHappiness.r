@@ -137,7 +137,7 @@ Ranking2017 <- ggplot(HappinessRank_top20,
                 y=HappinessRank_top20$Happiness.Rank.2017)) +
                 geom_bar(stat = 'identity', width = 0.5, 
                 fill = "orange") + 
-                theme(axis.text.x = element_text(angle=90, vjust=0.9))+
+                theme(axis.text.x = element_text(angle=90, vjust=0.5))+
                 labs(title="Top20 Happiest Countries-2017",x="Country",y="Rank")
 
 Ranking2017
